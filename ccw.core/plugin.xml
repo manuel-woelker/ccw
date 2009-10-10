@@ -203,6 +203,13 @@
             categoryId="org.eclipse.debug.ui.category.run"
             id="ccw.debug.ui.clojureShortcut.run">
       </command>
+      <command
+            categoryId="org.eclipse.ui.category.navigate"
+            defaultHandler="ccw.commands.OpenSymbolHandler"
+            description="Open Clojure Symbol"
+            id="ccw.openSymbol"
+            name="openSymbol">
+      </command>
       
    </extension>
    
@@ -278,6 +285,12 @@
             contextId="ccw.ui.clojureEditorScope"
             commandId="ccw.ui.edit.text.clojure.compile.lib"
             schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+      <key
+            commandId="ccw.openSymbol"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+M2+C">
+      </key>
             
 	</extension>
    <extension
