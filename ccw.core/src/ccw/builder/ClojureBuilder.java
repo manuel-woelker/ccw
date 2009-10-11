@@ -32,6 +32,7 @@ import org.eclipse.jdt.core.JavaCore;
 
 import ccw.CCWPlugin;
 import ccw.debug.ClojureClient;
+import ccw.index.IndexManager;
 
 /*
  * gaetan.morice:
@@ -53,7 +54,8 @@ public class ClojureBuilder extends IncrementalProjectBuilder {
     	if (getProject()==null) {
     		return null;
     	}
-    	
+    	IndexManager indexManager = CCWPlugin.getDefault().getIndexManager();
+    	indexManager.index(getProject());
     	if (kind == AUTO_BUILD || kind == INCREMENTAL_BUILD) {
 	    	if (onlyClassesFolderRelatedDelta()) {
 	    		return null;

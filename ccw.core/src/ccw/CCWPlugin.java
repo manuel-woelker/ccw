@@ -38,6 +38,7 @@ import org.osgi.framework.BundleContext;
 
 import ccw.debug.ClojureClient;
 import ccw.editors.antlrbased.AntlrBasedClojureEditor;
+import ccw.index.IndexManager;
 import ccw.launching.LaunchUtils;
 import ccw.lexers.ClojureLexer;
 import ccw.preferences.PreferenceConstants;
@@ -276,6 +277,8 @@ public class CCWPlugin extends AbstractUIPlugin {
 	
 	private IScanContext scanContext;
 
+	private final IndexManager indexManager = new IndexManager();
+
 	public synchronized IScanContext getDefaultScanContext() {
 		if (scanContext == null) {
 			scanContext = new StaticScanContext();
@@ -342,5 +345,9 @@ public class CCWPlugin extends AbstractUIPlugin {
         colorRegistry.put(AntlrBasedClojureEditor.ID + "_" + ClojureLexer.CIRCUMFLEX, black); //$NON-NLS-1$
         colorRegistry.put(AntlrBasedClojureEditor.ID + "_" + ClojureLexer.COMMERCIAL_AT, black); //$NON-NLS-1$
         colorRegistry.put(AntlrBasedClojureEditor.ID + "_" + ClojureLexer.NUMBER_SIGN, black); //$NON-NLS-1$
+    }
+    
+    public IndexManager getIndexManager() {
+    	return indexManager ;
     }
 }
