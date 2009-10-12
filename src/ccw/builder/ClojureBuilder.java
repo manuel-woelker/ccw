@@ -110,12 +110,12 @@ public class ClojureBuilder extends IncrementalProjectBuilder {
         
         ClojureClient clojureClient = CCWPlugin.getDefault().getProjectClojureClient(getProject());
         if (clojureClient == null) {
-        	return;
+//        	return;
         }
         
         deleteMarkers();
 
-        ClojureVisitor visitor = new ClojureVisitor(clojureClient);
+        ClojureBuildOfflineVisitor visitor = new ClojureBuildOfflineVisitor(getClassesFolder());
         visitor.visit(getSrcFolders());
         
         getClassesFolder().refreshLocal(IResource.DEPTH_INFINITE, new SubProgressMonitor(monitor, 0));
