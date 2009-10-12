@@ -559,4 +559,10 @@
           id="ccw.preferences.SyntaxColoringPreferencePage">
     </page>
  </extension>
+ <extension
+       point="org.eclipse.ui.startup">
+    <startup
+          class="ccw.index.IndexStartup">
+    </startup>
+ </extension>
 </plugin>
