@@ -12,6 +12,8 @@
  *******************************************************************************/
 package ccw.editors.antlrbased;
 
+import java.util.Map;
+
 import org.eclipse.jface.internal.text.html.HTMLTextPresenter;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.text.DefaultInformationControl;
@@ -125,6 +127,12 @@ public class ClojureSourceViewerConfiguration extends TextSourceViewerConfigurat
 		// cf. http://code.google.com/p/counterclockwise/issues/detail?id=5
 		// Completely disable spellchecking until we can distinguish comments and code, and spell check based on these partitions
 		return null;
+	}
+	
+	protected Map getHyperlinkDetectorTargets(ISourceViewer sourceViewer) {
+		Map hyperlinkDetectorTargets = super.getHyperlinkDetectorTargets(sourceViewer);
+		hyperlinkDetectorTargets.put("ccw.clojureCode", editor);
+		return hyperlinkDetectorTargets;
 	}
 	
 	

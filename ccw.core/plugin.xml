@@ -546,4 +546,23 @@
           id="ccw.preferences.SyntaxColoringPreferencePage">
     </page>
  </extension>
+ <extension
+       point="org.eclipse.ui.workbench.texteditor.hyperlinkDetectorTargets">
+    <target
+          id="ccw.clojureCode"
+          name="Clojure Code">
+       <context type="org.eclipse.ui.texteditor.ITextEditor"/>
+    </target>
+ </extension>
+ <extension
+       point="org.eclipse.ui.workbench.texteditor.hyperlinkDetectors">
+    <hyperlinkDetector
+          activate="true"
+          class="ccw.editors.antlrbased.ClojureSymbolHyperlinkDetector"
+          id="ccw.editors.antlrbased.ClojureSymbolHyperlinkDetector"
+          modifierKeys="Ctrl"
+          name="ccw hyperlinker"
+          targetId="ccw.clojureCode">
+    </hyperlinkDetector>
+ </extension>
 </plugin>
