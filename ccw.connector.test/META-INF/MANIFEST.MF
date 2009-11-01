@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Test
+Bundle-SymbolicName: ccw.connector.test
+Bundle-Version: 1.0.0.qualifier
+Fragment-Host: ccw.connector;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.easymock;version="2.5.1",
+ org.junit
+Require-Bundle: org.hamcrest.core
